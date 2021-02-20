@@ -1,7 +1,9 @@
 ﻿using CarRental.Business.Abstract;
+using CarRental.Business.ValidationRules.FluentValidation;
 using CarRental.DataAccess.Abstract;
 using CarRental.Entities.Concrete;
 using CarRental.Entities.DTOs;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Result;
 using System;
 using System.Collections.Generic;
@@ -18,6 +20,7 @@ namespace CarRental.Business.Concrete
             _carDal = carDal;
         }
 
+        [ValidationAspect(typeof(CarValidator))]
         public IResult Add(Car car)
         {
             _carDal.Add(car);
