@@ -11,7 +11,7 @@ namespace CarRental.ConsoleUI
         static void Main(string[] args)
         {
             //RentalDeneme();
-           CarDeneme();
+           //CarDeneme();
 
         }
 
